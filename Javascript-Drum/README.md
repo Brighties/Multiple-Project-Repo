@@ -20,4 +20,4 @@ This is an interactive JavaScript Drum Kit that allows you to play different dru
 
 ## Live Site
 
-[Click here]() to access the live site
+[Click here](https://gregarious-pasca-fb2a49.netlify.app/) to access the live site
