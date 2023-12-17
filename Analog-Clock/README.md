@@ -22,4 +22,4 @@ This project features an analog clock created using HTML, CSS, and JavaScript. T
 
 ## Live Site
 
-[Click here]() to access the live site
+[Click here](https://657f5db71ade912a7246daba--fabulous-alpaca-56474c.netlify.app/) to access the live site
