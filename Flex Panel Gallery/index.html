@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flex Panels 💪</title>
+    <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="panels">
+        <div class="panel panel1">
+            <p>Hey</p>
+            <p>Let's</p>
+            <p>Dance</p>
+        </div>
+        <div class="panel panel2">
+            <p>Give</p>
+            <p>Take</p>
+            <p>Receive</p>
+        </div>
+        <div class="panel panel3">
+            <p>Experience</p>
+            <p>It</p>
+            <p>Today</p>
+        </div>
+        <div class="panel panel4">
+            <p>Give</p>
+            <p>All</p>
+            <p>You can</p>
+        </div>
+        <div class="panel panel5">
+            <p>Life</p>
+            <p>In</p>
+            <p>Motion</p>
+        </div>
+    </div>
+
+    <script>
+        const updateDOMContent = () => {
+            let panelElements = document.querySelectorAll('.panel');
+
+            // Convert the NodeList to an array
+            panelElements = Array.from(panelElements);
+
+            // Loop through the panelElements array and add event listeners
+            panelElements.forEach(panelElement => {
+                // Remove the class 'grow-bigger' from all panels
+                panelElement.classList.remove('grow-bigger');
+
+                // Add a click event listener to the entire panel
+                panelElement.addEventListener('click', () => {
+                    panelElements.forEach(otherPanel => {
+                        if (otherPanel !== panelElement) {
+                            otherPanel.classList.remove('grow-bigger');
+                        }
+                    });
+
+                    // Toggle the class 'grow-bigger' for the clicked panel
+                    panelElement.classList.toggle('grow-bigger');
+                });
+
+                // Add a transitionend event listener to each panel
+                panelElement.addEventListener('transitionend', () => {
+                    panelElement.classList.toggle('visible');
+                });
+            });
+        };
+
+        document.addEventListener('DOMContentLoaded', updateDOMContent);
+
+        // FUTURE CHALLENGE: Use event delegation to solve this problem, add eventlistener to only
+        // the parent element 'panels', then grab the closest panel and add eventlistener
+    </script>
+</body>
+
+</html>
